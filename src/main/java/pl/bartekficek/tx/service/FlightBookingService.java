@@ -2,6 +2,9 @@ package pl.bartekficek.tx.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import pl.bartekficek.tx.dto.FlightBookingAcknowledgement;
 import pl.bartekficek.tx.dto.FlightBookingRequest;
 import pl.bartekficek.tx.entity.PassengerInfo;
@@ -21,8 +24,8 @@ public class FlightBookingService {
     @Autowired
     private PaymentInfoRepository paymentInfoRepository;
 
+    @Transactional(readOnly = false, isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
     public FlightBookingAcknowledgement bookFlightTicket (FlightBookingRequest request) {
-        FlightBookingAcknowledgement acknowledgement = null;
 
         PassengerInfo passengerInfo = request.getPassengerInfo();
         passengerInfo = passengerInfoRepository.save(passengerInfo);
