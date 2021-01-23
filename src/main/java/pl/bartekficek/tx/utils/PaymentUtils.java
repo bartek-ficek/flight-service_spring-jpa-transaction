@@ -10,7 +10,7 @@ public class PaymentUtils {
 
     private static Map<String, Double> paymentMap = new HashMap<>();
 
-    {
+    static {
         paymentMap.put("account1", 12000.0);
         paymentMap.put("account2", 10000.0);
         paymentMap.put("account3", 5000.0);
