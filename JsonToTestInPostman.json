@@ -1,0 +1,16 @@
+{
+  "passengerInfo": {
+    "name": "basant",
+    "email": "basant@gmail.com",
+    "source": "GRO",
+    "destination": "OSL",
+    "travelDate": "24-02-2021",
+    "pickupTime": "4.0 PM",
+    "arrivalTime": "6.0 PM",
+    "fare": 18000
+  },
+  "paymentInfo": {
+    "accountNo": "account1",
+    "cardType": "DEBIT"
+  }
+}
